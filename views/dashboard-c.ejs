@@ -1,0 +1,43 @@
+<html>
+  <% include ../partials/head %>
+  <body>
+    <% include ../partials/nav-c %>
+    <br></br>
+    <h4 class="center">College Dashboard</h4>
+    <br></br>
+    <div class="container">
+      <table>
+          <thead>
+            <tr>
+                <th>Student</th>
+                <th>Essay Title</th>
+                <th>Verified?</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < studentEssayArray.length; i++) {%>
+              <tr>
+                <td>
+                  <%= studentEssayArray[i].author %>
+                </td>
+                <td>
+                  <%= studentEssayArray[i].title%>
+                </td>
+                <td>
+                  <% if(studentEssayArray[i].verified) {%> Yes
+                  <% } else { %> No
+                  <% } %>  
+                </td>
+                <td>
+                  <a class="waves-effect waves-light btn" href='/showEssay/<%= studentEssayArray[i]._id %>'>Open</a>
+                </td>
+              </tr>
+            <% } %>  
+          </tbody>
+        </table>
+    </div>
+    <% include ../partials/footer %>
+  </body>
+</html>

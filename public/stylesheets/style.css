@@ -1,0 +1,15 @@
+.essay-text{
+    white-space: pre-wrap;    
+}
+
+.logoText{
+    margin-left: 10px;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+	font-size: inherit;
+}

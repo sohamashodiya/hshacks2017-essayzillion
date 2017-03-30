@@ -1,0 +1,44 @@
+<html>
+  <% include ../partials/head %>
+  <body>
+    <% include ../partials/nav-c %>
+    <br></br>
+    <div class="container">
+      <h4><%= essay.title%></h4>    
+      <hr/>
+      
+      <pre class="essay-text">
+        <%= essay.essayText%>
+      </pre>
+      <hr/>
+      
+      <% if(essay.isPlagiarized) {%>
+              <h4>Plagiarism : <span class="red-text">True</span></h4>
+      <% } else { %>
+              <h4>Plagiarism : <span class="green-text">False</span></h4>
+      <% } %>        
+      <hr/>
+      
+      <h4>Essay Scores</h4>
+      <hr/>
+      <% for(var si=0; si<scoreNames.length; si++) {%>
+        <div>
+          <h5>
+            <%= scoreNames[si].charAt(0).toUpperCase() + scoreNames[si].slice(1) %>
+            :
+            <%= essay[scoreNames[si]] %> %
+          </h5>
+          
+          <div class="grey lighten-1">
+            <div class="orange darken-4" style="height:24px;width:<%= essay[scoreNames[si]] %>%"></div>
+          </div>
+          <br/>
+
+        </div>
+      <% }%>
+        
+        
+    </div>
+    <% include ../partials/footer %>
+  </body>
+</html>
