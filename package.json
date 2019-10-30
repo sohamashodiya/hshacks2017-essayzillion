@@ -14,7 +14,7 @@
     "express": "^4.14.1",
     "express-session": "^1.15.1",
     "materialize-css": "^0.98.1",
-    "mongoose": "^4.9.1",
+    "mongoose": "^5.7.7",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
   }
